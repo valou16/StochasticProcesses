@@ -1,10 +1,9 @@
-function m = Q1_3_4(chain_length)
+function M = Q1_3_4(N, beta, J,  H, chain_length, nb_chain)
 
-nb_chain = 100; % nombre de simulations
 m = zeros(chain_length, nb_chain);
 
 for i=1:nb_chain
-	[~, m(:, i)] = Q1_3_3(chain_length);
+	[~, m(:, i)] = Q1_3_3(N, beta, J,  H, chain_length);
 end
 
 M = zeros(chain_length, 1);
@@ -16,9 +15,9 @@ for i=1:chain_length
 	centile_95(i) = quantile(m(i, :), 0.95);
 end
 
-hold on
-plot(M);
-plot(centile_05);
-plot(centile_95);
+% hold on
+% plot(M);
+% plot(centile_05);
+% plot(centile_95);
 
 end

@@ -1,10 +1,5 @@
 
-function [m, M] = Q1_3_3(chain_length)
-
-N = 10;
-J = 1;
-H  = 3;
-beta = 0.2;
+function [m, M] = Q1_3_3(N, beta, J,  H, chain_length)
 
 s = zeros(chain_length, N); %vector state
 s(1, :) = [1 1 1 1 1 1 1 1 1 1];
@@ -42,7 +37,7 @@ for i=2:chain_length
 	M(i) = mean(m(1:i, :));
 end
 
-plot(M);
+% plot(M);
 
 end
 function t = flip(s)
